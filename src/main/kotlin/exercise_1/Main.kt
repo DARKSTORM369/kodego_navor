@@ -24,7 +24,7 @@ class Main {
         var celNumber: Int? = null
         var email: String? = null
         var socialSecurityNumber: Long? = null
-        var us_citizen: Boolean? = null
+        var usCitizen: Boolean? = null
         var convicted: Boolean? = null
 
         //Education
