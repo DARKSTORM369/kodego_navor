@@ -7,43 +7,43 @@ class Main {
         var availability: String? = null
 
         //Personal Information
-        var lName: String? = null
-        var fName: String? = null
-        var mName: String? = null
+        var lastName: String? = null
+        var firstName: String? = null
+        var middleName: String? = null
         var age: Int? = null
-        var bDate: String? = null
+        var birthDate: String? = null
         //Address
         var addr: String? = null
         var city: String? = null
-        var cState: String? = null
-        var zip: Int? = null
+        var cityState: String? = null
+        var zipCode: Int? = null
         //Contact Information
-        var tela: String? = null
-        var teln: Int? = null
-        var cela: String? = null
-        var celn: Int? = null
+        var telAreaCode: String? = null
+        var telNumber: Int? = null
+        var celAreaCode: String? = null
+        var celNumber: Int? = null
         var email: String? = null
-        var sss: Long? = null
-        var us_cit: Boolean? = null
-        var convict: Boolean? = null
+        var socialSecurityNumber: Long? = null
+        var us_citizen: Boolean? = null
+        var convicted: Boolean? = null
 
         //Education
-        var sch1: String? = null
-        var loc1: String? = null
-        var yrs1: String? = null
-        var deg1: String? = null
-        var maj1: String? = null
-        var sch2: String? = null
-        var loc2: String? = null
-        var yrs2: String? = null
-        var deg2: String? = null
-        var maj2: String? = null
-        var sch3: String? = null
-        var loc3: String? = null
-        var yrs3: String? = null
-        var deg3: String? = null
-        var maj3: String? = null
-        var trns: String? = null
+        var school1: String? = null
+        var schoolLocation1: String? = null
+        var yrsAttended1: String? = null
+        var degreeReceived1: String? = null
+        var majored1: String? = null
+        var school2: String? = null
+        var schoolLocation2: String? = null
+        var yrsAttended2: String? = null
+        var degreeReceived2: String? = null
+        var majored2: String? = null
+        var school3: String? = null
+        var schoolLocation3: String? = null
+        var yrsAttended3: String? = null
+        var degreeReceived3: String? = null
+        var majored3: String? = null
+        var etcTrainingsCertsLics: String? = null
 
         age = 60
         checkAge(age)
