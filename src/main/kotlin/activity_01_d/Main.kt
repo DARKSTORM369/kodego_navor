@@ -20,7 +20,7 @@ fun main() {
     // Value Entry
     print("Enter Value 1: ")
     value1 = readLine()?.let {
-        if (it == "" || it.toString() in "A" .. "z") {
+        if (it == "" || it in "A" .. "~") {
             println("Entered an invalid value. Value is considered as 0")
             return@let 0
         }else{
@@ -30,7 +30,7 @@ fun main() {
 
     print("Enter Value 2: ")
     value2 = readLine()?.let {
-        if (it == "" || it.toString() in "A" .. "z") {
+        if (it == "" || it in "A" .. "~") {
             println("Entered an invalid value. Value is considered as 0")
             return@let 0
         }else{
@@ -40,7 +40,7 @@ fun main() {
 
     print("Enter Value 3: ")
     value3 = readLine()?.let {
-        if (it == "" || it.toString() in "A" .. "z") {
+        if (it == "" || it in "A" .. "~") {
             println("Entered an invalid value. Value is considered as 0")
             return@let 0
         }else{
@@ -50,7 +50,7 @@ fun main() {
 
     print("Enter Value 4: ")
     value4 = readLine()?.let {
-        if (it == "" || it.toString() in "A" .. "z") {
+        if (it == "" || it in "A" .. "~") {
             println("Entered an invalid value. Value is considered as 0")
             return@let 0
         }else{
@@ -60,7 +60,7 @@ fun main() {
 
     print("Enter Value 5: ")
     value5 = readLine()?.let {
-        if (it == "" || it.toString() in "A" .. "z") {
+        if (it == "" || it in "A" .. "~") {
             println("Entered an invalid value. Value is considered as 0")
             return@let 0
         }else{
@@ -73,7 +73,7 @@ fun main() {
 
     print("Divide the value by how many? ")
     divisor = readLine()?.let {
-        if (it == "" || it.toString() in "A" .. "z") {
+        if (it == "" || it in "A" .. "~") {
             println("Entered an invalid value. Value is considered as 0")
             return@let 0
         }else{
@@ -81,6 +81,6 @@ fun main() {
         }
     } ?: 0
 
-    quotient = sum.toDouble() / divisor
+    quotient = sum.toDouble() / divisor.toDouble()
     print("Quotient = $quotient")
 }
