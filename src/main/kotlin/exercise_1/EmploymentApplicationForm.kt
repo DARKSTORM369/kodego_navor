@@ -55,6 +55,9 @@ fun checkAge(age: Int?){
     var ageAdult = 20 .. 59
     var ageSenior = 60 .. 100
 
+    var ageMinor = 0 .. 17
+    var ageLegal = 18 .. 100
+
     if(age != null){
         when (age){
             in ageChild -> println("Applicant is a Child")
