@@ -14,7 +14,7 @@ fun main() {
     var value4: Double? = null
     var value5: Double? = null
     var divisor: Int? = null
-    var sum: Int = 0
+    var sum: Double = 0.0
     var quotient: Double? = null
 
     // Value Entry
