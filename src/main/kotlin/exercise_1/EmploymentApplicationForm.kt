@@ -2,7 +2,7 @@ package exercise_1
 
 fun main() {
     var position: String? = null
-    var salary: Double? = null
+    var salary: Float? = null
     var availability: String? = null
 
     //Personal Information
