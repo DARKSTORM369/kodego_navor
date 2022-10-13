@@ -8,11 +8,11 @@ package activity_01_d
     Note: Error checking must be done.
  */
 fun main() {
-    var value1: Int? = null
-    var value2: Int? = null
-    var value3: Int? = null
-    var value4: Int? = null
-    var value5: Int? = null
+    var value1: Double? = null
+    var value2: Double? = null
+    var value3: Double? = null
+    var value4: Double? = null
+    var value5: Double? = null
     var divisor: Int? = null
     var sum: Int = 0
     var quotient: Double? = null
@@ -20,53 +20,53 @@ fun main() {
     // Value Entry
     print("Enter Value 1: ")
     value1 = readLine()?.let {
-        if (it.toIntOrNull() == null) {
-            println("Entered an invalid value. Value is considered as 0")
-            return@let 0
+        if (it.toDoubleOrNull() == null) {
+            println("Entered an invalid value. Value is considered as 0.0")
+            return@let 0.0
         }else{
-            it.toInt()
+            it.toDouble()
         }
-    } ?: 0
+    } ?: 0.0
 
     print("Enter Value 2: ")
     value2 = readLine()?.let {
-        if (it.toIntOrNull() == null) {
-            println("Entered an invalid value. Value is considered as 0")
-            return@let 0
+        if (it.toDoubleOrNull() == null) {
+            println("Entered an invalid value. Value is considered as 0.0")
+            return@let 0.0
         }else{
-            it.toInt()
+            it.toDouble()
         }
-    } ?: 0
+    } ?: 0.0
 
     print("Enter Value 3: ")
     value3 = readLine()?.let {
-        if (it.toIntOrNull() == null) {
-            println("Entered an invalid value. Value is considered as 0")
-            return@let 0
+        if (it.toDoubleOrNull() == null) {
+            println("Entered an invalid value. Value is considered as 0.0")
+            return@let 0.0
         }else{
-            it.toInt()
+            it.toDouble()
         }
-    } ?: 0
+    } ?: 0.0
 
     print("Enter Value 4: ")
     value4 = readLine()?.let {
-        if (it.toIntOrNull() == null) {
-            println("Entered an invalid value. Value is considered as 0")
-            return@let 0
+        if (it.toDoubleOrNull() == null) {
+            println("Entered an invalid value. Value is considered as 0.0")
+            return@let 0.0
         }else{
-            it.toInt()
+            it.toDouble()
         }
-    } ?: 0
+    } ?: 0.0
 
     print("Enter Value 5: ")
     value5 = readLine()?.let {
-        if (it.toIntOrNull() == null) {
-            println("Entered an invalid value. Value is considered as 0")
-            return@let 0
+        if (it.toDoubleOrNull() == null) {
+            println("Entered an invalid value. Value is considered as 0.0")
+            return@let 0.0
         }else{
-            it.toInt()
+            it.toDouble()
         }
-    } ?: 0
+    } ?: 0.0
 
     sum = value1 + value2 + value3 + value4 + value5
     println("Total Sum of the Values = $sum")
@@ -81,6 +81,6 @@ fun main() {
         }
     } ?: 0
 
-    quotient = sum.toDouble() / divisor.toDouble()
+    quotient = sum / divisor.toDouble()
     print("Quotient = $quotient")
 }
