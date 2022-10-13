@@ -7,7 +7,7 @@ package activity_01_b
  */
 
 fun main() {
-    var id: Long
+    var isbn: Long
     var category: String
     var subCategory: String?
     var bookTitle: String
