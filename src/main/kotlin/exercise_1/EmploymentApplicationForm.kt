@@ -1,9 +1,11 @@
 package exercise_1
 
+import mu.KotlinLogging
 import java.time.LocalDateTime
 import java.time.Month
 import java.util.Date
 
+private val logger = KotlinLogging.logger {  }
 fun main() {
     var position: String? = null
     var salary: Float? = null
@@ -64,17 +66,17 @@ fun checkAge(age: Int?){
 
     if(age != null){
         when (age){
-            in ageChild -> println("Applicant is a Child")
-            in ageTeen -> println("Applicant is a Teenager")
-            in ageAdult-> println("Applicant is an Adult")
-            in ageSenior -> println("Applicant is a Senior Citizen")
-            else -> println("Age cannot be determined")
+            in ageChild -> logger.info{"Applicant is a Child"}
+            in ageTeen -> logger.info{"Applicant is a Teenager"}
+            in ageAdult-> logger.info{"Applicant is an Adult"}
+            in ageSenior -> logger.info{"Applicant is a Senior Citizen"}
+            else -> logger.info{"Age cannot be determined"}
         }
         when (age){
-            in ageMinor -> println("Applicant is still a Minor")
-            in ageLegal -> println("Applicant is of Legal Age")
+            in ageMinor -> logger.info{"Applicant is still a Minor"}
+            in ageLegal -> logger.info{"Applicant is of Legal Age"}
         }
     }else{
-        println("Age was not given")
+        logger.info{"Age was not given"}
     }
 }
