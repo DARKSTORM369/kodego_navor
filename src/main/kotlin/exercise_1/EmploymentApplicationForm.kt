@@ -1,5 +1,9 @@
 package exercise_1
 
+import java.time.LocalDateTime
+import java.time.Month
+import java.util.Date
+
 fun main() {
     var position: String? = null
     var salary: Float? = null
@@ -10,7 +14,7 @@ fun main() {
     var firstName: String? = null
     var middleName: String? = null
     var age: Int? = null
-    var birthDate: String? = null
+    var birthDate: Date? = null
     //Address
     var addr: String? = null
     var city: String? = null
@@ -66,14 +70,10 @@ fun checkAge(age: Int?){
             in ageSenior -> println("Applicant is a Senior Citizen")
             else -> println("Age cannot be determined")
         }
-        /*
-        if(age < 18){
-            println("Applicant is not of Legal Age")
-        }else if(age >= 18 && age < 60){
-            println("Applicant is of Legal Age")
-        }else if(age >= 60){
-            println("Applicant is a Senior Citizen")
-        }*/
+        when (age){
+            in ageMinor -> println("Applicant is still a Minor")
+            in ageLegal -> println("Applicant is of Legal Age")
+        }
     }else{
         println("Age was not given")
     }
