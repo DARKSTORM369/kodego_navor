@@ -12,6 +12,7 @@ import mu.KotlinLogging
 
     *** I still used print for readability of inputs
  */
+
 private val logger = KotlinLogging.logger {  }
 fun main() {
     var value1: Double? = null

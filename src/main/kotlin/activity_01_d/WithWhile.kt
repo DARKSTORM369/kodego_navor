@@ -12,6 +12,7 @@ import mu.KotlinLogging
 
     *** I still used print for readability of inputs
  */
+
 private val logger = KotlinLogging.logger {  }
 fun main() {
     var input: String?
@@ -32,7 +33,7 @@ fun main() {
         if (input.toDoubleOrNull() == null) {
             logger.error { "Entered an invalid value. Please enter a monetary amount." }
         } else {
-            value1 =input.toDouble()
+            value1 = input.toDouble()
             valid = true
         }
     } while (!valid)
