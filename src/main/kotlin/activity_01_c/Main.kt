@@ -1,4 +1,7 @@
 package activity_01_c
+
+import java.util.Date
+
 /*
     You are tasked to automate an inventory system for a grocery.
     Identify the items that can be bought in a grocery store.
@@ -14,4 +17,13 @@ fun main() {
     var quantity: Int
     var price: Float
     var remarks: String?
+
+    //Sales
+    var timestamp: Date
+    var skuRef: Long
+    var orderCategory: String
+    var orderSubCategory: String?
+    var itemOrdered: String
+    var quantityPlaced: Int
+    var totalAmount: Float
 }
