@@ -11,6 +11,10 @@ import mu.KotlinLogging
     Note: Error checking must be done.
 
     *** I still used print for readability of inputs
+
+    # Update
+    Implemented Data Structures
+    activity_01_d
  */
 
 private val logger = KotlinLogging.logger {  }
