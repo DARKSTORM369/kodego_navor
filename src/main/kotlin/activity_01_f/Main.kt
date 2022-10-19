@@ -15,11 +15,9 @@ private val logger = KotlinLogging.logger {  }
 fun main() {
     print("Please Enter String 1: ")
     var str1: String = readLine().toString()
-//    var str1: String = "ahvsubziaSjnk"
 
     print("Please Enter String 2: ")
     var str2: String = readLine().toString()
-//    var str2: String = "jahivyawqoijA"
 
     var uniqueChars: String = ""
 
@@ -36,7 +34,6 @@ fun main() {
                 var index3 = 0
                 while (index3 < uniqueChars.length){
                     if(uniqueChars[index3].equals(str1[index1],true)){
-//                        logger.warn { "Entered Function. String1 $index1: ${str1[index1]}, String2 $index2: ${str2[index2]}, List: $uniqueChars" }
                         isUnique = false
                     }
                     index3++
@@ -64,7 +61,6 @@ fun main() {
                 var index3 = 0
                 while (index3 < uniqueChars.length){
                     if(uniqueChars[index3].equals(str2[index1],true)){
-//                        logger.warn { "Entered Function. String1 $index1: ${str1[index1]}, String2 $index2: ${str2[index2]}, List: $uniqueChars" }
                         isUnique = false
                     }
                     index3++
