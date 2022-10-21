@@ -23,6 +23,7 @@ fun main() {
     var reverse = ""
     var index = text.length-1
 
+//    reverse = text.reversed()
     while (index >= 0){
         reverse += text[index]
         index--
