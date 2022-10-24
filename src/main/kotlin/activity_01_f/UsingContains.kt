@@ -19,33 +19,30 @@ fun main() {
     print("Please Enter String 2: ")
     var str2: String = readLine().toString()
 
-    var uniqueChars: String = ""
+    var uniqueChars1: String = ""
+    var uniqueChars2: String = ""
 
-    var index = 0
-    var hasUnique = false
     var uniqueCount = 0
-    while (index < str1.length){
-        if(!str2.contains(str1[index], true) && !uniqueChars.contains(str1[index], true)){
-            logger.info { "Found a Unique Character: ${str1[index].uppercase()}" }
-            uniqueChars += str1[index]
-            hasUnique = true
+
+    for(char in str1){
+        if(!str2.contains(char, true) && !uniqueChars1.contains(char, true) && !uniqueChars2.contains(char, true)){
+            uniqueChars1 += char
             uniqueCount++
         }
-        index++
     }
-    index = 0
-    while(index < str2.length){
-        if(!str1.contains(str2[index], true) && !uniqueChars.contains(str2[index], true)){
-            logger.info { "Found a Unique Character: ${str2[index].uppercase()}" }
-            uniqueChars += str2[index]
-            hasUnique = true
+
+    for(char in str2){
+        if(!str1.contains(char, true) && !uniqueChars1.contains(char, true) && !uniqueChars2.contains(char, true)){
+            uniqueChars2 += char
             uniqueCount++
         }
-        index++
     }
-    if(!hasUnique){
-        logger.error { "No Unique Characters has been found" }
+
+    if(uniqueCount > 0){
+        logger.info { "Found $uniqueCount Unique Characters from both Strings" }
+        logger.info { "String 1: ${uniqueChars1.uppercase()}" }
+        logger.info { "String 2: ${uniqueChars2.uppercase()}" }
     }else{
-        logger.info { "$uniqueCount Unique Characters Found: $uniqueChars" }
+        logger.error { "No Unique Characters has been found" }
     }
 }
