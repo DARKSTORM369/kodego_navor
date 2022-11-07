@@ -36,7 +36,7 @@ fun main() {
     }
 
     showStudents(students)
-    students = addStudent(students)
+    students.addAll(addStudent(students))
     showStudents(students)
     students = removeStudent(students)
 
@@ -88,11 +88,12 @@ fun isStudentInRecord(students: ArrayList<String>): Boolean{
 
 fun addStudent(students: ArrayList<String>): ArrayList<String>{
     var addStudent = true
+    var newStudents: ArrayList<String> = ArrayList()
     do{
         print("Add Student: ")
         var newStudent = readLine().toString()
         if (newStudent.isNotEmpty()) {
-            students.add(newStudent)
+            newStudents.add(newStudent)
             logger.info { "$newStudent has been added to the List of Students" }
         }else{
             logger.error { "Please Input a Valid Name!" }
@@ -106,7 +107,7 @@ fun addStudent(students: ArrayList<String>): ArrayList<String>{
         }
     }while (addStudent)
 
-    return students
+    return newStudents
 }
 
 fun removeStudent(students: ArrayList<String>): ArrayList<String>{ // Case Sensitive
