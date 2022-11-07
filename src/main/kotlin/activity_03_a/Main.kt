@@ -71,11 +71,18 @@ fun isStudentInRecord(students: ArrayList<String>): Boolean{
     print("Search Name in Record: ")
     var search = readLine().toString()
     var found = false
+
     for(student in students){
         if (student.equals(search, true)){
             found = true
         }
     }
+
+    /*
+    if (students.contains(search)){
+        found = true
+    }
+    */
     return found
 }
 
@@ -154,7 +161,7 @@ fun searchStudentWildSearch(students: ArrayList<String>, search: String): ArrayL
 }
 
 fun searchStudentName(students: ArrayList<String>): ArrayList<String>{
-    print("Search Student Name: ")
+    print("Exact Search Student Name: ")
     var search = readLine().toString()
     var studentsFound: ArrayList<String> = ArrayList()
 
