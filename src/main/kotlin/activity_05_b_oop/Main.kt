@@ -25,6 +25,12 @@ open class Publication {
         this.datePublished = datePublished
         this.materialType = materialType
     }
+    constructor(title: String, publisher: String, datePublished: Date): this(){
+        this.title = title
+        this.publisher = publisher
+        this.datePublished = datePublished
+        this.materialType = materialType
+    }
 }
 
 class Magazine(title: String, publisher: String, datePublished: Date, materialType: MaterialType): Publication(title, publisher, datePublished, materialType){
@@ -35,7 +41,7 @@ class Newspaper(title: String, publisher: String, datePublished: Date, materialT
 
 }
 
-class Comics(title: String, publisher: String, datePublished: Date, materialType: MaterialType): Publication(title, publisher, datePublished, materialType){
+class Comics(title: String, publisher: String, datePublished: Date): Publication(title, publisher, datePublished){
 
 }
 
