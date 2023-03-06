@@ -4,7 +4,6 @@ import mu.KotlinLogging
 import java.util.Date
 
 /*
-TODO: Need further instructions
 Covered Topic(s) : Classes
 
 Instructions :
@@ -19,16 +18,27 @@ Instructions :
 val logger = KotlinLogging.logger {  }
 fun main() {
     val students: ArrayList<Student> = arrayListOf(
-        Student("James", "Navor", "Jek", 2_15_5857, 2022),
-        Student("John", "Doe", "John", 2_14_4485, 2023),
-        Student("Jane", "Doe", "Jane", 1_15_4851, 2019),
+        Student("James", "Esteban", "Navor", "Jek", 2_15_5857, 2022),
+        Student("John", "Male","Doe", "John", 2_14_4485, 2023),
+        Student("Jane", "Female","Doe", "Jane", 1_15_4851, 2019),
     )
+    val studentsFound = searchStudentWildSearch(students)
+    if(studentsFound.isNotEmpty()){
+        println("Found ${studentsFound.size} Students: ")
+        for(student in studentsFound){
+            with(student){
+                logger.info { "$firstName $lastName" }
+            }
+        }
+    }else{
+        logger.error { "No students found!" }
+    }
 }
 
 class Main {
 }
 
-data class Student(val firstName: String, val lastName: String, val nickName: String, val id: Long, var yearEnrolled: Int)
+data class Student(val firstName: String, val middleName: String, val lastName: String, val nickName: String, val id: Long, var yearEnrolled: Int)
 
 fun searchStudentWildSearch(students: ArrayList<Student>): ArrayList<Student>{
     print("Wild Search Name: ")
@@ -39,6 +49,7 @@ fun searchStudentWildSearch(students: ArrayList<Student>): ArrayList<Student>{
         for (student in students) {
             if (
                 student.firstName.contains(search, true) or
+                student.middleName.contains(search, true) or
                 student.lastName.contains(search, true) or
                 student.nickName.contains(search, true)
             ) {

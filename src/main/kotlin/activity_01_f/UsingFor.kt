@@ -72,6 +72,6 @@ fun main() {
         logger.info { "String 1: ${uniqueChars1.uppercase()}" }
         logger.info { "String 2: ${uniqueChars2.uppercase()}" }
     }else{
-        logger.error { "No Unique Characters has been found" }
+        logger.error { "No Unique Character has been found" }
     }
 }

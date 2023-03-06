@@ -1,0 +1,23 @@
+James Dave Navor
+
+Array:
+	1. Game of the Generals
+	2. TicTacToe
+	3. Electric Bill
+
+ArrayList:
+	1. Shopping List
+	2. Item Inventory
+	3. To do list
+
+
+Set:
+	1. Contact Information
+	2. Calendar Schedule
+	3. Browser History
+
+Map:
+	1. Financial Statement
+	2. Payroll
+	3. Family Tree
+	Resume

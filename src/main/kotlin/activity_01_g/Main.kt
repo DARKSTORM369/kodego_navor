@@ -20,15 +20,18 @@ private val logger = KotlinLogging.logger {  }
 fun main() {
     print("Input String: ")
     var text: String = readLine().toString()
-    var reverse = ""
-    var index = text.length-1
+    var palindrome = true
+    var startIndex = 0
+    var endIndex = text.length-1
 
-//    reverse = text.reversed()
-    while (index >= 0){
-        reverse += text[index]
-        index--
+    while (startIndex <= endIndex){
+        if (!text[startIndex].equals(text[endIndex], true)){
+            palindrome = false
+        }
+        startIndex++
+        endIndex--
     }
-    if(text.equals(reverse, true)){
+    if(palindrome){
         logger.info { "$text is a Palindrome" }
     }else{
         logger.error { "$text is not a Palindrome" }
