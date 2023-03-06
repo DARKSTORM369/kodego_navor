@@ -34,9 +34,12 @@ Instructions :
  */
 
 fun main() {
+    //https://gist.github.com/jaidevd/23aef12e9bf56c618c41
     val books: ArrayList<Book> = arrayListOf(
         // TODO: List
     )
+    //https://kk.org/cooltools/best-magazine-articles-ever/
+    //https://github.com/echocat/nodejs-kata-1/tree/master/data
     val magazines: ArrayList<Magazine> = arrayListOf(
         // TODO: List
 //        Magazine(Editor("James Dave", "Esteban", "Navor", Date()), "Unknown", "January", 2012)
@@ -160,7 +163,7 @@ class Book{
     var pages: Int = 0
 }
 
-open class Person(val firstName: String, val middleName: String, val lastName: String, val dateOfBirth: Date)
+open class Person(val firstName: String, val middleName: String = "", val lastName: String, val dateOfBirth: Date)
 class Author(firstName: String, middleName: String, lastName: String, dateOfBirth: Date): Person(firstName, middleName, lastName, dateOfBirth)
 class Illustrator(firstName: String, middleName: String, lastName: String, dateOfBirth: Date): Person(firstName, middleName, lastName, dateOfBirth)
 class Editor(firstName: String, middleName: String, lastName: String, dateOfBirth: Date): Person(firstName, middleName, lastName, dateOfBirth)

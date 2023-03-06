@@ -1,5 +1,7 @@
 package activity_04_oop
 
+import javax.print.attribute.standard.JobOriginatingUserName
+
 /*
 TODO: Need further instructions
 You are tasked to create an application for a fast food company.
@@ -86,62 +88,119 @@ class Cart(var customer: Customer){
     }
 }
 
+class Menu(){
+    val fruits = ArrayList<Fruits>()
+    val shakes = ArrayList<Shakes>()
+    val juices = ArrayList<Juices>()
+    val sandwiches = ArrayList<Sandwiches>()
+    val salads = ArrayList<Salads>()
+
+    init {
+        //https://www.da.gov.ph/price-monitoring/ November 16, 2022
+        fruits.addAll(arrayListOf(
+            Fruits("Calamansi", 100.00),
+            Fruits("Banana (Latundan)", 60.00),
+            Fruits("Banana (Lakatan)", 70.00),
+            Fruits("Papaya", 60.00),
+            Fruits("Mango (Carabao)", 180.00)
+        ))
+        fruits[0].quantity = 1.0F
+        fruits[0].quantityUnit = "per kg"
+        fruits[1].quantity = 1.0F
+        fruits[1].quantityUnit = "per kg"
+        fruits[2].quantity = 1.0F
+        fruits[2].quantityUnit = "per kg"
+        fruits[3].quantity = 1.0F
+        fruits[3].quantityUnit = "per kg"
+        fruits[4].quantity = 1.0F
+        fruits[4].quantityUnit = "per kg"
+
+        //https://www.foodnetwork.com/grilling/grilling-central-burgers-and-hot-dogs/articles/50-milkshakes
+        shakes.addAll(arrayListOf(
+            Shakes("Vanilla", 0.0),
+            Shakes("Toasted Mashmallow", 0.0),
+            Shakes("S'mores", 0.0),
+            Shakes("Fig and Port", 0.0),
+            Shakes("Strawberry", 0.0),
+        ))
+
+        //https://sipsmarter.org/juice-varieties/
+        juices.addAll( arrayListOf(
+            Juices("Apple Juice", 0.0),
+            Juices("Beet Juice", 0.0),
+            Juices("Blueberry Juice", 0.0),
+            Juices("Cranberry Juice", 0.0),
+            Juices("Carrot Juice", 0.0),
+        ))
+
+        //https://restaurantclicks.com/types-of-sandwiches/
+        sandwiches.addAll( arrayListOf(
+            Sandwiches("Chicken Sandwich", 0.0),
+            Sandwiches("Egg Sandwich", 0.0),
+            Sandwiches("Seafood Sandwich", 0.0),
+            Sandwiches("Roast Beef Sandwich", 0.0),
+            Sandwiches("Grilled Cheese Sandwich", 0.0),
+        ))
+
+        //https://www.loveandlemons.com/salad-recipes/
+        salads.addAll( arrayListOf(
+            Salads("Summer Asian Slaw", 0.0),
+            Salads("Broccoli Salad", 0.0),
+            Salads("Shredded Brussels Sprout Salad", 0.0),
+            Salads("Pasta Salad", 0.0),
+            Salads("Rainbow Orzo Salad", 0.0),
+        ))
+    }
+
+    fun showItems(){
+        println("Menu Items:")
+        println("Fruits:")
+        for (fruit in fruits){
+            with(fruit){
+                println("Fruit: $name, Price: $price")
+            }
+        }
+        println("Shakes:")
+        for (shake in shakes){
+            with(shake){
+                println("Fruit: $name, Price: $price")
+            }
+        }
+        println("Juices:")
+        for (juice in juices){
+            with(juice){
+                println("Fruit: $name, Price: $price")
+            }
+        }
+        println("Sandwiches:")
+        for (sandwich in sandwiches){
+            with(sandwich){
+                println("Fruit: $name, Price: $price")
+            }
+        }
+        println("Salads:")
+        for (salad in salads){
+            with(salad){
+                println("Fruit: $name, Price: $price")
+            }
+        }
+    }
+}
+
 data class Customer(var address: String, var mobileNumber: String, var firstName: String, var lastName: String)
 
 fun main() {
-    //TODO: List of 5 Items per Category
-    //https://www.da.gov.ph/price-monitoring/ November 16, 2022
-    val fruits: ArrayList<Fruits> = arrayListOf(
-        Fruits("Calamansi", 100.00),
-        Fruits("Banana (Latundan)", 60.00),
-        Fruits("Banana (Lakatan)", 70.00),
-        Fruits("Papaya", 60.00),
-        Fruits("Mango (Carabao)", 180.00)
-    )
-    fruits[0].quantity = 1.0F
-    fruits[0].quantityUnit = "per kg"
-    fruits[1].quantity = 1.0F
-    fruits[1].quantityUnit = "per kg"
-    fruits[2].quantity = 1.0F
-    fruits[2].quantityUnit = "per kg"
-    fruits[3].quantity = 1.0F
-    fruits[3].quantityUnit = "per kg"
-    fruits[4].quantity = 1.0F
-    fruits[4].quantityUnit = "per kg"
+    val menu = Menu()
 
-    //https://www.foodnetwork.com/grilling/grilling-central-burgers-and-hot-dogs/articles/50-milkshakes
-    val shakes: ArrayList<Shakes> = arrayListOf(
-        Shakes("Vanilla", 0.0),
-        Shakes("Toasted Mashmallow", 0.0),
-        Shakes("S'mores", 0.0),
-        Shakes("Fig and Port", 0.0),
-        Shakes("Strawberry", 0.0),
-    )
+    //Customer
+    val john = Customer("", "", "John", "Doe")
+    val johnCart = Cart(john)
+    menu.showItems()
+    johnCart.addItems(menu.fruits[0], 1F)
+    johnCart.addItems(menu.shakes[0], 1F)
+    johnCart.addItems(menu.juices[0], 1F)
+    johnCart.addItems(menu.sandwiches[0], 1F)
+    johnCart.addItems(menu.salads[0], 1F)
 
-    //https://sipsmarter.org/juice-varieties/
-    val juices: ArrayList<Juices> = arrayListOf(
-        Juices("Apple Juice", 0.0),
-        Juices("Beet Juice", 0.0),
-        Juices("Blueberry Juice", 0.0),
-        Juices("Cranberry Juice", 0.0),
-        Juices("Carrot Juice", 0.0),
-    )
-
-    //https://restaurantclicks.com/types-of-sandwiches/
-    val sandwiches: ArrayList<Sandwiches> = arrayListOf(
-        Sandwiches("Chicken Sandwich", 0.0),
-        Sandwiches("Egg Sandwich", 0.0),
-        Sandwiches("Seafood Sandwich", 0.0),
-        Sandwiches("Roast Beef Sandwich", 0.0),
-        Sandwiches("Grilled Cheese Sandwich", 0.0),
-    )
-
-    //https://www.loveandlemons.com/salad-recipes/
-    val salads: ArrayList<Salads> = arrayListOf(
-        Salads("Summer Asian Slaw", 0.0),
-        Salads("Broccoli Salad", 0.0),
-        Salads("Shredded Brussels Sprout Salad", 0.0),
-        Salads("Pasta Salad", 0.0),
-        Salads("Rainbow Orzo Salad", 0.0),
-    )
+    johnCart.updateOrder(OrderStatus.BEING_PREPARATION)
 }

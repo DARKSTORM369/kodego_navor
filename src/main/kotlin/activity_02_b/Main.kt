@@ -1,7 +1,5 @@
 package activity_02_b
 
-import java.time.LocalDateTime
-import java.time.Month
 import java.util.Date
 /*
     You are tasked to automate a school’s library.
@@ -14,10 +12,13 @@ import java.util.Date
 
 fun main() {
     //Books Information
-    var books: ArrayList<Any>
+    val books: ArrayList<Book>
 
     //Borrower Information
-    var borrowers: ArrayList<Any>
+    val borrowers: ArrayList<Borrower>
+
+    //Borrowed Book Information
+    val borrowedBooks: ArrayList<BorrowedBook>
 }
 
 data class Book(
@@ -39,7 +40,13 @@ data class Borrower(
     val borrowerID: Long,
     var firstName: String,
     var lastName: String,
-    var bookISBN: Long,
+)
+
+data class BorrowedBook(
+    val id: Long,
+    val borrowerID: Long,
+    val isbn: Long,
     var dateBorrowed: Date,
+    var dateDue: Date,
     var dateReturned: Date?
 )

@@ -24,11 +24,4 @@ fun main() {
     var bookVolume: String?
     var bookPages: Int
     var remarks: String?
-
-    //Borrower Information
-    var borrowerID: Long
-    var borrowerFirstName: String
-    var borrowerLastName: String
-    var borrowedDate: Date
-    var returnedDate: Date?
 }

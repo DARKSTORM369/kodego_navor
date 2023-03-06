@@ -13,11 +13,45 @@ Instructions :
     Example Coke_01, Coke_02
 4. Create a function "checkOut". This will compute how many items have been checked out.
 5. Create a function "removeFromCart"  that will accept a String and remove the input from the Hashmap. If there are multiple entries, remove all from the HashMap.
+
+https://github.com/drriley/grocery/blob/master/lib/items.csv
 */
 
 fun main() {
     var groceryProducts: ArrayList<String> = arrayListOf(
-        //TODO: List of Grocery Items
+        "Cheddar cheese",
+        "Milk",
+        "Vanilla Yogurt",
+        "Chocolate Ice Cream",
+        "Sandwich Bread",
+        "Vinegar",
+        "Horseradish",
+        "Bananas",
+        "Peppermint",
+        "Whole Wheat",
+        "Cinnamon Toast Crunch",
+        "Olive Oil",
+        "Chicken Breast",
+        "Tomato Soup",
+        "Honey Almond Flax Cereal",
+        "Three Cheese Tortellini",
+        "Turkey Breast",
+        "Raisin Bran Cereal",
+        "Bologna",
+        "Smoked Ham",
+        "Apple Juice",
+        "Pinto Beans",
+        "Beets",
+        "Sweet Peas",
+        "Green Bell Peppers",
+        "Dark Chocolate Bar",
+        "Oats ‘N Honey Crunchy Granola Bars",
+        "Rice Pilaf: Roasted Almond Flavor",
+        "Whole Wheat Penne Pasta",
+        "Macaroni & Cheese",
+        "Peanut Butter",
+        "Green Beans",
+        "Broccoli Florets",
     )
     var cart = HashMap<String, Int>()
 }
@@ -63,8 +97,8 @@ fun removeFromCart(groceryProducts: ArrayList<String>, cart: HashMap<String, Int
 
 fun checkOut(cart: HashMap<String, Int>){
     var productCount = cart.count()
-    var quanity = cart.values.sum()
-    println("A total of $productCount items with a total quantity of $quanity have been checked out.")
+    var quantity = cart.values.sum()
+    println("A total of $productCount items with a total quantity of $quantity have been checked out.")
 }
 
 fun inProducts(groceryProducts: ArrayList<String>, item: String): Boolean = groceryProducts.contains(item)
