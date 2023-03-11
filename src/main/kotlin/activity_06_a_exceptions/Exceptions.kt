@@ -1,5 +1,5 @@
 package activity_06_a_exceptions
-/*
+/* TODO:
 Using Activity 05 A (???)
 
 Create a function that will check the student's grade.
