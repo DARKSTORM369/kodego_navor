@@ -68,7 +68,7 @@ fun main() {
         var div = 1
         var divisors = 0
         var remainder = 0
-        while (div <= min){
+        while (div <= min){ //TODO: If Divisors > 2, Next
             remainder = min % div
             if(remainder == 0){
                 divisors++

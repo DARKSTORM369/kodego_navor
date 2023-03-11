@@ -49,7 +49,7 @@ class Player(val name: String, val color: PieceColor){
         println("$name sled down from ${snake.mouth} to ${snake.tail}")
         position
     }
-    private fun rollDice(): Int {
+    private fun rollDice(): Int { //TODO: Shouldn't be inside Player
         var diceRoll = Random.nextInt(1, 7)
         println("$name rolled $diceRoll")
         return diceRoll
@@ -70,7 +70,8 @@ data class Ladder(val basePosition: Int, val topPosition: Int)
 fun main() {
     var james = Player("James", PieceColor.BLUE)
     val players: ArrayList<Player> = arrayListOf(
-        Player("Blue", PieceColor.BLUE),
+        james,
+//        Player("Blue", PieceColor.BLUE),
         Player("Green", PieceColor.GREEN),
         Player("Red", PieceColor.RED),
         Player("Yellow", PieceColor.YELLOW)

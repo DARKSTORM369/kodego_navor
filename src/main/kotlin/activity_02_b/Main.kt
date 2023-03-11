@@ -8,6 +8,7 @@ import java.util.Date
     Use the proper data types.
 
     Implement Activity 01 -  B using data structure.
+    //TODO: Without using Classes
  */
 
 fun main() {

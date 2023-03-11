@@ -20,20 +20,24 @@ private val logger = KotlinLogging.logger {  }
 fun main() {
     print("Input String: ")
     var text: String = readLine().toString()
-    var palindrome = true
-    var startIndex = 0
-    var endIndex = text.length-1
+    if(text.isNotEmpty()) {
+        var palindrome = true
+        var startIndex = 0
+        var endIndex = text.length - 1
 
-    while (startIndex <= endIndex){
-        if (!text[startIndex].equals(text[endIndex], true)){
-            palindrome = false
+        while (startIndex <= endIndex) {
+            if (!text[startIndex].equals(text[endIndex], true)) {
+                palindrome = false
+            }
+            startIndex++
+            endIndex--
         }
-        startIndex++
-        endIndex--
-    }
-    if(palindrome){
-        logger.info { "$text is a Palindrome" }
+        if (palindrome) {
+            logger.info { "$text is a Palindrome" }
+        } else {
+            logger.error { "$text is not a Palindrome" }
+        }
     }else{
-        logger.error { "$text is not a Palindrome" }
+        logger.error { "You didn't enter any text" }
     }
 }
