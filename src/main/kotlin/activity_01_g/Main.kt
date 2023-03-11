@@ -19,8 +19,8 @@ import mu.KotlinLogging
 private val logger = KotlinLogging.logger {  }
 fun main() {
     print("Input String: ")
-    var text: String = readLine().toString()
-    if(text.isNotEmpty()) {
+    var text: String = readLine().toString().trim()
+    if(text.isNotEmpty() && text.length > 1) {
         var palindrome = true
         var startIndex = 0
         var endIndex = text.length - 1
@@ -38,6 +38,6 @@ fun main() {
             logger.error { "$text is not a Palindrome" }
         }
     }else{
-        logger.error { "You didn't enter any text" }
+        logger.error { "You didn't entered an invalid input" }
     }
 }

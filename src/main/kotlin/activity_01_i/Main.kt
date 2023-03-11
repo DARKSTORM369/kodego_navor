@@ -13,6 +13,7 @@ import java.util.*
 
 fun main() {
     // TODO: Get back to this later after further lessons -> For Review
+    // TODO: Process -> Probably wasteful since there are way more efficient methods deeper in Kotlin
     //Book Information
     var isbn: Long
     var category: String

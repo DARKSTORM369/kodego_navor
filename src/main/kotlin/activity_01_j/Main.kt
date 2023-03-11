@@ -13,7 +13,8 @@ package activity_01_j
  */
 
 fun main() {
-    // TODO: Get back to this later after further lessons -> For Review, Process?
+    // TODO: Get back to this later after further lessons -> For Review
+    // TODO: Process -> Probably wasteful since there are way more efficient methods deeper in Kotlin
     //Grocery Item
     val sku: Long
     var itemCategory: String
