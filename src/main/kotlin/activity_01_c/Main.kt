@@ -7,9 +7,12 @@ import java.util.Date
     Identify the items that can be bought in a grocery store.
     After listing the different items, identify the characteristics of the items.
     You are also tasked to group the items in categories to help manage the grocery.  Use the proper data types.
+
+    https://www.inettutor.com/diagrams/point-of-sale-system-pos-er-diagram/
  */
 
 fun main() {
+    //Product
     var sku: Long
     var category: String
     var subCategory: String?
