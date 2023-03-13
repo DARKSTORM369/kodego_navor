@@ -26,6 +26,7 @@ Note : end will only contain a value if he or she is done with the course
 
 The Master Student has a list of college(s) he or she belongs to, there is a year he or she joined the college,
 and has name of the master degree he or she is getting.
+TODO: Follow Instructions.
  */
 
 open class Person {

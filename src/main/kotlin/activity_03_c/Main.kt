@@ -15,6 +15,8 @@ Instructions :
 5. Create a function "removeFromCart"  that will accept a String and remove the input from the Hashmap. If there are multiple entries, remove all from the HashMap.
 
 https://github.com/drriley/grocery/blob/master/lib/items.csv
+
+TODO: Follow instructions
 */
 
 fun main() {

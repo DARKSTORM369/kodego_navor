@@ -20,6 +20,8 @@ Note: Names are single word with no spaces example, "Marco", "Eugene", "Sarah", 
 8. Create a function "searchStudent" that will accept a String and call "searchStudentWildSearch" if the String input is
     less than or equal to three, and it will call "searchStudentName" if the String input is greater than three.
 9.  Create a function "showStudents" that will print all the entries in the ArrayList.
+
+TODO: Follow Instructions
  */
 
 val logger = KotlinLogging.logger {  }

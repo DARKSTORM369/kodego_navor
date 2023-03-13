@@ -17,6 +17,8 @@ Hint:
 Reference: https://www.ymimports.com/pages/how-to-play-snakes-and-ladders
 
 TODO: Code feels wrongly made. Must improve.
+        Polymorphism
+        Unit Testing -> Review
  */
 class Player(val name: String, val color: PieceColor){
     var position: Int = 0
