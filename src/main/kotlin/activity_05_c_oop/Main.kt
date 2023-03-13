@@ -14,7 +14,7 @@ Covered Topic(s) : OOP
     c - check out cart > compute the total cost of the cart.
 
     https://www.ziplist.com/grocery-list-template/categories
-
+    https://www.listplanit.com/list-of-categories-for-an-organized-grocery-list/
     TODO: Activity 04 - C
  */
 
@@ -31,7 +31,7 @@ open class Product(){
 
 class Cart(var customer: Customer){
     var uniqueID: String = ""
-    var items: HashMap<Product, Float> = HashMap()
+    var items: HashMap<Product, Float> = HashMap() //TODO: Explore Set
 }
 
 data class Customer(var address: String, var mobileNumber: String, var firstName: String, var lastName: String)

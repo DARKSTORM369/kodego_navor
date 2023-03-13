@@ -3,7 +3,7 @@ package activity_02_c
 import java.sql.Timestamp
 import java.util.Date
 
-/*
+/**
     You are tasked to automate an inventory system for a grocery.
     Identify the items that can be bought in a grocery store.
     After listing the different items, identify the characteristics of the items.
@@ -26,7 +26,7 @@ fun main() {
     var totalAmount: Float
 }
 
-data class Item(
+data class Items(
     val sku: Long,
     var category: String,
     var subCategory: String?,

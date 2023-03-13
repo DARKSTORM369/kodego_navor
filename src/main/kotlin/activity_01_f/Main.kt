@@ -49,7 +49,7 @@ fun main() {
         }
         index1++
     }
-
+//TODO: Redo
     index1 = 0
     while (index1 < str2.length){
         var index2 = 0

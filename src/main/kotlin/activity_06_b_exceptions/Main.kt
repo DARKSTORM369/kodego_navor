@@ -72,7 +72,7 @@ data class Borrower(val firstName: String, val lastName: String){
     }
 }
 
-class Person(val firstName: String, val lastName: String, val role: Role){
+class Person(val firstName: String, val lastName: String, val role: Role = Role.UNKNOWN){
 }
 
 enum class Role{

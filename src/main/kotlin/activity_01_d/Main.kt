@@ -32,9 +32,9 @@ fun main() {
     print("Enter Value 1: ")
     value1 = readLine()?.let {
         var valid = false
-        if (it.toDoubleOrNull() == null) {
+        if (it.toDoubleOrNull() == null) { //TODO: Review toDoubleOrNull
             logger.error { "Entered an invalid value. Value is considered as 0.0" }
-            return@let 0.0
+            0.0
         }else{
             it.toDouble()
         }

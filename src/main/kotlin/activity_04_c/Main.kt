@@ -1,7 +1,7 @@
 package activity_04_c
 
 /* TODO: Need Reference material
-         *Expiration Date
+         *Expiration Date / Storage Period
 Covered Topic(s) : Classes
 
 Create class for:
@@ -26,12 +26,16 @@ Identify the attributes for all the classes mentioned.
 
 class Poultry {
     var name: String = ""
+    var species: String = ""
     var part: String = ""
     var cuts: String = ""
 }
 
 class Fish {
-
+    var name: String = ""
+    var species: String = ""
+    var part: String = ""
+    var cuts: String = ""
 }
 
 class CannedGoods {

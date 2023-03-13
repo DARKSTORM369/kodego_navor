@@ -14,6 +14,7 @@ import mu.KotlinLogging
     Input:
         1, 4 -> 1, 2, 3
         10 -> 1, 2, 3, 5, 7
+    TODO: Unit Testing
  */
 private val logger = KotlinLogging.logger {  }
 fun main() {
@@ -74,6 +75,7 @@ fun main() {
                 divisors++
             }
             div++
+            //
         }
         if(divisors < 3){
             if(prime.isNotEmpty()) { prime += ", " }
