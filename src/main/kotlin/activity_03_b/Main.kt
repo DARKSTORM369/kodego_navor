@@ -17,109 +17,74 @@ Instructions :
 7. Create a function  "searchBookName" that will accept a String and search if there is an exact match of the String input,
     it will return an ArrayList of books that matched if there are.
 8.  Create a function "showBooks" that will print all the entries in the ArrayList.
-TODO: Follow instructions
  */
 
+var books: ArrayList<String> = arrayListOf(
+    "Society, Culture, and Politics",
+    "Ekonomiks: Katuturan, Gamit, at Kahalagahan",
+    "Media Information Literacy Today",
+    "Pilgrimage to Sacred Spaces",
+    "Media and Information in a Changing World",
+    "Integrated English for Effective Communication",
+    "Developing Reading and Writing Skills",
+    "HUMSS Fusion",
+    "Making Life Worth Living",
+    "Claiming Spaces",
+    "Disciplines and Ideas in the Social Sciences",
+    "Pinagyamang Pluma",
+    "Earth Science",
+    "Disaster Readiness and Risk Reduction",
+    "Earth and Life Science",
+    "Exploring Life Through Science",
+    "Creative Nonfiction",
+    "Soaring 21st Century Mathematics",
+    "Math in Today's World",
+    "Next Century Mathematics"
+)
+
 fun main() {
-    var books: ArrayList<String> = arrayListOf(
-        "Society, Culture, and Politics",
-        "Ekonomiks: Katuturan, Gamit, at Kahalagahan",
-        "Media Information Literacy Today",
-        "Pilgrimage to Sacred Spaces",
-        "Media and Information in a Changing World",
-        "Integrated English for Effective Communication",
-        "Developing Reading and Writing Skills",
-        "HUMSS Fusion",
-        "Making Life Worth Living",
-        "Claiming Spaces",
-        "Disciplines and Ideas in the Social Sciences",
-        "Pinagyamang Pluma",
-        "Earth Science",
-        "Disaster Readiness and Risk Reduction",
-        "Earth and Life Science",
-        "Exploring Life Through Science",
-        "Creative Nonfiction",
-        "Soaring 21st Century Mathematics",
-        "Math in Today's World",
-        "Next Century Mathematics"
-    )
-
-    if(isBookInRecord(books)){
-        logger.info { "Book Search Successful" }
-    }else{
-        logger.error { "Book Search Failed" }
-    }
-
-    showStudents(books)
-    books = addBook(books)
-    showStudents(books)
-    books = removeBook(books)
-
-    logger.info { "There are ${countBooks(books)} Books in the List." }
-
-    var wildSearch: ArrayList<String> = searchBookWildSearch(books)
-    if(wildSearch.size > 0) {
-        logger.info { "Book Wild Search Successful" }
-        showBooks(wildSearch)
-    }else{
-        logger.error { "Book Wild Search Failed" }
-    }
-
-    var exactSearch = searchBookName(books)
-    if(exactSearch.size > 0) {
-        logger.info { "Book Name Search Successful" }
-        showStudents(exactSearch)
-    }else{
-        logger.error { "Book Name Search Failed" }
-    }
-}
-
-fun isBookInRecord(books: ArrayList<String>): Boolean{
-    var bookFound = false
-    print("Find Book in Record: ")
-    var search = readLine().toString()
-    if (books.contains(search)){
-        bookFound = true
-    }
-    return bookFound
-}
-
-
-fun addBook(books: ArrayList<String>): ArrayList<String>{
-    var addBook = true
-    do{
-        print("Add Book: ")
-        var newBook = readLine().toString()
-        if (newBook.isNotEmpty()) {
-            books.add(newBook)
-            logger.info { "$newBook has been added to the List of Books" }
-        }else{
-            logger.error { "Please Input a Valid Book!" }
+    /** Show Books */
+    showBooks(books)
+    /** Find Book in Record */
+    var findBook = true
+    do {
+        print("Find Book in Record: ")
+        var findBookTitle = readLine().toString()
+        if (isBookInRecord(findBookTitle)) {
+            logger.info { "Book is in the Record" }
+        } else {
+            logger.error { "Book is not in the Record" }
         }
+        print("Find more books? Y / N: ")
+        var findMore = readLine().toString()
+        if (!findMore.equals("Y", true)) {
+            findBook = false
+            logger.info { "Finished Finding Books" }
+        }
+    } while (findBook)
 
+    /** Add Books */
+    var addBook = true
+    do {
+        print("Add in Record: ")
+        var bookTitle = readLine().toString()
+        addBook(bookTitle)
         print("Add more books? Y / N: ")
         var addMore = readLine().toString()
-        if(!addMore.equals("Y", true)){
+        if (!addMore.equals("Y", true)) {
             addBook = false
-            logger.info { "List of Books has been updated" }
+            logger.info { "List of Books have been updated" }
         }
-    }while (addBook)
+    } while (addBook)
 
-    return books
-}
+    showBooks(books)
 
-fun removeBook(books: ArrayList<String>): ArrayList<String>{ // Case Sensitive
+    /** Remove Books */
     var removeBook = true
     do{
         print("Remove Book: ")
-        var bookName = readLine().toString()
-        if (bookName.isNotEmpty() && books.contains(bookName)) {
-            books.remove(bookName)
-            logger.info { "$bookName has been removed from the List of Students" }
-        }else{
-            logger.error { "Book not found in the list!" }
-        }
-
+        var bookTitle = readLine().toString()
+        removeBook(bookTitle)
         print("Delete more books? Y / N: ")
         var deleteMore = readLine().toString()
         if(!deleteMore.equals("Y", true)){
@@ -128,19 +93,84 @@ fun removeBook(books: ArrayList<String>): ArrayList<String>{ // Case Sensitive
         }
     }while (removeBook)
 
-    return books
+    logger.info { "There are ${countBooks(books)} Books in the List." }
+
+    /** Book Wild Search */
+    var wildSearch = true
+    do {
+        print("Wild Search Book: ")
+        var wildSearchBookTitle = readLine().toString()
+        var wildSearchList: ArrayList<String> = searchBookWildSearch(wildSearchBookTitle)
+        if (wildSearchList.size > 0) {
+            logger.info { "Found ${countBooks(wildSearchList)} Book(s) in the List" }
+            showBooks(wildSearchList)
+        } else {
+            logger.error { "Book Wild Search Failed" }
+        }
+        print("Search more books? Y / N: ")
+        var searchMore = readLine().toString()
+        if (!searchMore.equals("Y", true)) {
+            wildSearch = false
+            logger.info { "Finished Searching for Books" }
+        }
+    }while (wildSearch)
+
+    /** Book Exact Search */
+    var exactSearch = true
+    do {
+        print("Exact Search Book Name: ")
+        var title = readLine().toString()
+        val exactSearchList = searchBookName(title)
+        if (exactSearchList.size > 0) {
+            logger.info { "Book Name Search Successful" }
+            showBooks(exactSearchList)
+        } else {
+            logger.error { "Book Name Search Failed" }
+        }
+        print("Search more books? Y / N: ")
+        var searchMore = readLine().toString()
+        if (!searchMore.equals("Y", true)) {
+            exactSearch = false
+            logger.info { "Finished Searching for Books" }
+        }
+    }while (exactSearch)
+}
+
+fun isBookInRecord(title: String): Boolean{
+    var bookFound = false
+    if (books.contains(title)){
+        bookFound = true
+    }
+    return bookFound
+}
+
+
+fun addBook(title: String){
+    if (title.isNotEmpty()) {
+        books.add(title)
+        logger.info { "$title has been added to the List of Books" }
+    }else{
+        logger.error { "Please Input a Valid Book!" }
+    }
+}
+
+fun removeBook(title: String){ // Case Sensitive
+    if (title.isNotEmpty() && books.contains(title)) {
+        books.remove(title)
+        logger.info { "$title has been removed from the List of Students" }
+    }else{
+        logger.error { "Book not found in the list!" }
+    }
 }
 
 fun countBooks(books: ArrayList<String>): Int = books.size
 
-fun searchBookWildSearch(books: ArrayList<String>): ArrayList<String>{
-    print("Wild Search Book: ")
-    var search = readLine().toString()
-    var studentsFound: ArrayList<String> = ArrayList()
+fun searchBookWildSearch(title: String): ArrayList<String>{
+    val studentsFound: ArrayList<String> = ArrayList()
 
-    if(search.isNotEmpty()) {
+    if(title.isNotEmpty()) {
         for (book in books) {
-            if (book.contains(search, true)) {
+            if (book.contains(title, true)) {
                 studentsFound.add(book)
             }
         }
@@ -148,13 +178,11 @@ fun searchBookWildSearch(books: ArrayList<String>): ArrayList<String>{
     return studentsFound
 }
 
-fun searchBookName(books: ArrayList<String>): ArrayList<String>{
-    print("Exact Search Book Name: ")
-    var search = readLine().toString()
+fun searchBookName(title: String): ArrayList<String>{
     var booksFound: ArrayList<String> = ArrayList()
 
     for (book in books) {
-        if (book == search){
+        if (book == title){
             booksFound.add(book)
         }
     }
