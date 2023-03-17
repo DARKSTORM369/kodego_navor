@@ -143,7 +143,7 @@ fun removeFromCart(item: String){
     if(inCart(cart, item)) {
         var cartItems = cart.keys.toList()
         for (product in cartItems) {
-            if (item.contains(product)) { //TODO
+            if (item.contains(product)) {
                 println("Removed $product from cart.")
                 cart.remove(product)
             }
