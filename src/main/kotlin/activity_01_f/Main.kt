@@ -2,13 +2,14 @@ package activity_01_f
 
 import mu.KotlinLogging
 
-/*
+/**
     Create an application that will accept 2 string inputs.
     Your application will print all unique characters in both Strings.
 
     Scope :
         String
         Loops
+    TODO: REDO, Instructions changed
  */
 
 private val logger = KotlinLogging.logger {  }
@@ -49,7 +50,7 @@ fun main() {
         }
         index1++
     }
-//TODO: Redo
+
     index1 = 0
     while (index1 < str2.length){
         var index2 = 0
