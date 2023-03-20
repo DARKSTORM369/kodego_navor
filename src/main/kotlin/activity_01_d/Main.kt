@@ -30,7 +30,8 @@ fun main() {
 
     // Value Entry
     print("Enter Value 1: ")
-    value1 = readLine()!!.let {
+    value1 = readln().let {
+        var valid = false
         if (it.toDoubleOrNull() == null) {
             logger.error { "Entered an invalid value. Value is considered as 0.0" }
             0.0
@@ -40,7 +41,7 @@ fun main() {
     }
 
     print("Enter Value 2: ")
-    value2 = readLine()!!.let {
+    value2 = readln().let {
         if (it.toDoubleOrNull() == null) {
             logger.error { "Entered an invalid value. Value is considered as 0.0" }
             return@let 0.0
@@ -50,7 +51,7 @@ fun main() {
     }
 
     print("Enter Value 3: ")
-    value3 = readLine()!!.let {
+    value3 = readln().let {
         if (it.toDoubleOrNull() == null) {
             logger.error { "Entered an invalid value. Value is considered as 0.0" }
             return@let 0.0
@@ -60,7 +61,7 @@ fun main() {
     }
 
     print("Enter Value 4: ")
-    value4 = readLine()!!.let {
+    value4 = readln().let {
         if (it.toDoubleOrNull() == null) {
             logger.error { "Entered an invalid value. Value is considered as 0.0" }
             return@let 0.0
@@ -70,7 +71,7 @@ fun main() {
     }
 
     print("Enter Value 5: ")
-    value5 = readLine()!!.let {
+    value5 = readln().let {
         if (it.toDoubleOrNull() == null) {
             logger.error { "Entered an invalid value. Value is considered as 0.0" }
             return@let 0.0
@@ -83,7 +84,7 @@ fun main() {
     logger.info("Total Sum of the Values = $sum")
 
     print("Divide the value by how many? ")
-    divisor = readLine()!!.let {
+    divisor = readln().let {
         if (it.toIntOrNull() == null) {
             logger.error { "Entered an invalid value. Value is considered as 0.0" }
             return@let 0
