@@ -3,13 +3,28 @@ package activity_01_f
 import mu.KotlinLogging
 
 /**
+    Scope : String, Loops
+
     Create an application that will accept 2 string inputs.
     Your application will print all unique characters in both Strings.
+    Union of Unique characters in both Strings
 
-    Scope :
-        String
-        Loops
-    TODO: REDO, Instructions changed
+    Example :
+        String 1 : Bird
+        String 2 : Cat
+        Unique : BirdCat
+
+    Example :
+        String 1 : Bird
+        String 2 : BigBird
+        Unique : gBird
+
+    Example :
+        String 1 : Eat
+        String 2 : Tea
+        Unique : Tea
+
+    TODO: Improve Logic
  */
 
 private val logger = KotlinLogging.logger {  }
@@ -20,66 +35,28 @@ fun main() {
     print("Please Enter String 2: ")
     var str2: String = readLine().toString()
 
-    var uniqueChars: String = ""
+//    var str1Unique = ""
+//    var str2Unique = ""
+//    var index = 0
+//    while (index < str1.length || index < str2.length){
+//        if (index < str1.length){
+//            if(index < str2.length && !str2.contains(str1[index], true)){
+//                str1Unique += str1[index]
+//            }
+//        }
+//        if (index < str2.length){
+//            if(index < str1.length && !str1.contains(str2[index], true)){
+//                str1Unique += str2[index]
+//            }
+//        }
+//        index++
+//    }
 
-    var index1 = 0
-    var hasUnique = false
-    var uniqueCount = 0
-    while (index1 < str1.length){
-        var index2 = 0
-        var isUnique = true
-        while(index2 < str2.length){
-            if(str2[index2].equals(str1[index1], true)){
-                isUnique = false
-            }else{
-                var index3 = 0
-                while (index3 < uniqueChars.length){
-                    if(uniqueChars[index3].equals(str1[index1],true)){
-                        isUnique = false
-                    }
-                    index3++
-                }
-            }
-            index2++
+    var uniqueWord = ""
+    for (char in str1 + str2){
+        if(!uniqueWord.contains(char, true)){
+            uniqueWord += char
         }
-        if(isUnique){
-            logger.info { "Found a Unique Character: ${str1[index1].uppercase()}" }
-            uniqueChars += str1[index1]
-            hasUnique = true
-            uniqueCount++
-        }
-        index1++
     }
-
-    index1 = 0
-    while (index1 < str2.length){
-        var index2 = 0
-        var isUnique = true
-        while(index2 < str1.length){
-            if(str2[index1].equals(str1[index2], true)){
-                isUnique = false
-            }else{
-                var index3 = 0
-                while (index3 < uniqueChars.length){
-                    if(uniqueChars[index3].equals(str1[index2],true)){
-                        isUnique = false
-                    }
-                    index3++
-                }
-            }
-            index2++
-        }
-        if(isUnique){
-            logger.info { "Found a Unique Character: ${str2[index1].uppercase()}" }
-            uniqueChars += str2[index1]
-            hasUnique = true
-            uniqueCount++
-        }
-        index1++
-    }
-    if(!hasUnique){
-        logger.error { "No Unique Characters has been found" }
-    }else{
-        logger.info { "Found $uniqueCount Unique Characters from both Strings: $uniqueChars" }
-    }
+    logger.info { "Unique: $uniqueWord" }
 }

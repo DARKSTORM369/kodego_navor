@@ -20,7 +20,7 @@ private val logger = KotlinLogging.logger {  }
 fun main() {
     print("Input String: ")
     var text: String = readLine().toString().trim()
-    if(text.isNotEmpty() && text.length > 1) {
+    if(text.isNotEmpty()) {
         var palindrome = true
         var startIndex = 0
         var endIndex = text.length - 1
