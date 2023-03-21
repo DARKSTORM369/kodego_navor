@@ -8,6 +8,8 @@ package activity_01_j
 
     Scope :
         Data Structures
+   TODO:
+        ArrayList / HashMap or the like
 
     https://itsourcecode.com/free-projects/database-design-projects/database-design-for-grocery-management-system/
  */
