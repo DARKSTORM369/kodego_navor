@@ -27,6 +27,7 @@ Note : end will only contain a value if he or she is done with the course
 The Master Student has a list of college(s) he or she belongs to, there is a year he or she joined the college,
 and has name of the master degree he or she is getting.
 TODO: Follow Instructions.
+    Change Students
  */
 
 open class Person {
@@ -47,10 +48,38 @@ open class Person {
     }
 }
 
-open class Student(firstName: String, middleName: String, lastName: String): Person(firstName, middleName, lastName){
+enum class StudentStatus{
+    LEAVE_OF_ABSENCE,
+    ONGOING,
+    GRADUATED,
+    WILL_BEGIN,
+    UNKNOWN,
+    SHIFTED
+}
+
+open class Course{
+    var fieldOfStudy: String = ""
+    var degree: String = ""
+
+    constructor()
+    constructor(fieldOfStudy: String){
+        this.fieldOfStudy = fieldOfStudy
+    }
+    constructor(degree: String, fieldOfStudy: String){
+        this.fieldOfStudy = fieldOfStudy
+        this.degree = degree
+    }
+}
+
+class ShortCourse(courseName: String): Course(courseName)
+
+class CollegeCourse(degree: String, fieldOfStudy: String): Course(degree, fieldOfStudy)
+
+open class Student(firstName: String, middleName: String = "", lastName: String): Person(firstName, middleName, lastName){
     open var yearStarted: Int? = null
     open var yearEnded: Int? = null
     var id: Long = 0
+    open var status: StudentStatus = StudentStatus.UNKNOWN
 
     open fun endCourse(yearEnded: Int){
         this.yearEnded = yearEnded
