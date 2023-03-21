@@ -28,6 +28,7 @@ fun main() {
         while (startIndex <= endIndex) {
             if (!text[startIndex].equals(text[endIndex], true)) {
                 palindrome = false
+                break
             }
             startIndex++
             endIndex--
