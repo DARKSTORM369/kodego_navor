@@ -2,7 +2,7 @@ package activity_05_a_oop
 
 import java.util.Date
 
-/*
+/**
 Scope : Use inheritance on Students
 
 Create a person class with firstname, middlename, lastname, address and birthday.
